@@ -14,17 +14,17 @@ module.exports = function transform(arr) {
           k--;
           break;
         case '--double-prev':
-          if (k = 0) arr.splice(0, 1); 
+          if (k === 0) arr.splice(0, 1); 
           else arr.splice(k, 1, arr[k-1]);
           --k;
           break;
         case '--double-next':
-          if (k = arr.length - 1) arr.splice(k, 1);
-          arr.splice(k, 1, arr[k+1]); 
+          if (k === (arr.length - 1)) arr.splice(k, 1);
+          else arr.splice(k, 1, arr[k+1]); 
           --k;
           break;
         case '--discard-prev':
-          if (k = 0) arr.splice(k, 1); 
+          if (k === 0) arr.splice(k, 1); 
           else arr.splice(k-1, 2); 
           --k;
           break;  
